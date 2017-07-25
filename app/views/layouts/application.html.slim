@@ -13,10 +13,36 @@ html
       p
         = alert
 
-    p
-      - if user_signed_in?
-        = link_to('Logout', destroy_user_session_path, :method => :delete)
-      - else
-        = link_to('Login', new_user_session_path)
+    header.header
+      .header__inner
+        h1.header__title.font-en Cheers!
+        ul.header__user-action-items
+          li.header__user-action-item
+            .icon-link
+              =link_to '#' do
+                i.fa.fa-pencil
+                p.icon-link-text ホーム
+          li.header__user-action-item
+            .icon-link
+              =link_to '#' do
+                i.fa.fa-pencil
+                p.icon-link-text 投稿
+          li.header__user-action-item
+            .icon-link
+              =link_to '#' do
+                i.fa.fa-pencil
+                p.icon-link-text 通知
+          li.header__user-action-item
+            .user-icon.js-menu
+            ul.header__menu-items.js-menu-content
+              li.header__menu-item
+                =link_to('プロフィール', '#', class: 'header__menu-link')
+              li.header__menu-item
+                =link_to('友達一覧', '#', class: 'header__menu-link')
+              li.header__menu-item
+                - if user_signed_in?
+                  = link_to('ログアウト', destroy_user_session_path, :method => :delete, class: 'header__menu-link')
+                - else
+                  = link_to('ログイン', new_user_session_path, class: 'header__menu-link')
 
     = yield

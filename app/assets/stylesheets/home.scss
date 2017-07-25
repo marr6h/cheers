@@ -1,3 +1,19 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+	 -webkit-text-size-adjust: 100%;
+  background: #f9f9f9;
+	 font-family: "Yu Gothic", YuGothic, "メイリオ", Meiryo, sans-serif;
+	 color: #222;
+  line-height: 1;
+}
+
+.home__body {
+  background: #f2dd6e;
+}
+
+.font-en {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-style: italic;
+}
