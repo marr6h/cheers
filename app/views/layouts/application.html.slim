@@ -45,4 +45,129 @@ html
                 - else
                   = link_to('ログイン', new_user_session_path, class: 'header__menu-link')
 
+    main.main__container
+      ul.feed__card-items
+        li.feed__card-item.my-action
+          .my-action__icon
+          p.my-action__text 今日も飲みに行こう！
+          .my-action__button-container
+            button.button-default.js-modal-open data-target="my-post"
+              i.fa.fa-pencil
+              | 投稿する
+          #my-post.modal-content
+            .my-action__form
+              .my-action__form-container
+                form
+                  .form-item
+                    label.form-label 場所
+                    input#area.form-control
+                  .form-item
+                    label.form-label 時間
+                    select
+                      option 17:00
+                  .form-item
+                    label.form-label メッセージ
+                    textarea.form-control-textarea
+                  .form-item
+                    button.button-default 投稿
+        li.feed__card-item
+          .feed__profile
+            .feed__profile-user-icon
+            p.feed__profile-name 名前名前
+            p.feed__date 30分前に投稿
+            .card-action__button-container
+              button.button-default.font-en.js-modal-open data-target="cheers1" Cheers!
+            #cheers1.modal-content
+              p.done-text-lg
+                | 鈴木さんに
+                span.font-en Cheers!
+                | を送りました。
+              p.done-text
+                | 鈴木さんからのメッセージをお待ちください。
+                br メッセージがきたら飲みに行こう！
+              .modal-link__container
+                a.text-link.secondary.js-modal-close 他の人の投稿を見る
+                a.text-link.primary href="#"
+                  | 通知一覧へ
+          .feed__content
+            .feed__content-two-columns
+              .feed__detail
+                i.fa.fa-map-marker.feed-icon
+                p.feed__detail-text
+                  | 上野、秋葉原
+                  span 周辺
+              .feed__detail
+                i.fa.fa-clock-o.feed-icon
+                p.feed__detail-text
+                  | 19:00
+                  span 頃から
+            .feed__comment
+              p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
+        li.feed__card-item
+          .feed__profile
+            .feed__profile-user-icon
+            p.feed__profile-name 名前名前
+            p.feed__date 30分前に投稿
+            .card-action__button-container
+              button.button-default.font-en.js-modal-open data-target="cheers2" Cheers!
+            #cheers2.modal-content
+              p.done-text-lg
+                | 佐藤さんに
+                span.font-en Cheers!
+                | を送りました。
+              p.done-text
+                | 佐藤さんからのメッセージをお待ちください。
+                br メッセージがきたら飲みに行こう！
+              .modal-link__container
+                a.text-link.secondary.js-modal-close 他の人の投稿を見る
+                a.text-link.primary href="#"
+                  | 通知一覧へ
+          .feed__content
+            .feed__content-two-columns
+              .feed__detail
+                i.fa.fa-map-marker.feed-icon
+                p.feed__detail-text
+                  | 上野、秋葉原
+                  span 周辺
+              .feed__detail
+                i.fa.fa-clock-o.feed-icon
+                p.feed__detail-text
+                  | 19:00
+                  span 頃から
+            .feed__comment
+              p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
+        li.feed__card-item
+          .feed__profile
+            .feed__profile-user-icon
+            p.feed__profile-name 名前名前
+            p.feed__date 30分前に投稿
+            .card-action__button-container
+              button.button-default.font-en.js-modal-open data-target="cheers3" Cheers!
+            #cheers3.modal-content
+              p.done-text-lg
+                | 田中さんに
+                span.font-en Cheers!
+                | を送りました。
+              p.done-text
+                | 田中さんからのメッセージをお待ちください。
+                br メッセージがきたら飲みに行こう！
+              .modal-link__container
+                a.text-link.secondary.js-modal-close 他の人の投稿を見る
+                a.text-link.primary href="#"
+                  | 通知一覧へ
+          .feed__content
+            .feed__content-two-columns
+              .feed__detail
+                i.fa.fa-map-marker.feed-icon
+                p.feed__detail-text
+                  | 上野、秋葉原
+                  span 周辺
+              .feed__detail
+                i.fa.fa-clock-o.feed-icon
+                p.feed__detail-text
+                  | 19:00
+                  span 頃から
+            .feed__comment
+              p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
+
     = yield
