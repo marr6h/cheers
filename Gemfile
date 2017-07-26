@@ -53,3 +53,5 @@ gem 'slim-rails'
 gem 'html2slim', '~> 0.2.0'
 
 gem 'devise'
+
+gem 'font-awesome-rails'
