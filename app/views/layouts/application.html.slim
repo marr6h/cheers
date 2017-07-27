@@ -170,4 +170,18 @@ html
             .feed__comment
               p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
 
+    footer.footer
+      .footer-inner
+        h2.footer-logo.font-en Cheers!
+        ul.footer__link-list-items
+          li.footer__link-list-item
+            =link_to('ホーム', '#', class: 'footer__link')
+          li.footer__link-list-item
+            =link_to('マイページ', '#', class: 'footer__link')
+          li.footer__link-list-item
+            =link_to('ヘルプ', '#', class: 'footer__link')
+          li.footer__link-list-item
+            =link_to('お問い合わせ', '#', class: 'footer__link')
+        p.footer_copyright.font-en © 2017 Cheers! all rights reserved.
+
     = yield
