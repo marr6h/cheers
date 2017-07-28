@@ -1,2 +1,21 @@
 h1 Home#index
 p Find me in app/views/home/index.html.slim
+
+p
+    | User
+    = @user.email
+p
+    | Posts
+    - for post in @posts
+        p
+
+            div
+                span
+                    | Number:
+                    = post.id
+                '
+                | Location:
+                = post.location
+                '
+                | Remarks:
+                = post.remarks
