@@ -2,9 +2,17 @@ p
 | Search users
 
 p
-  = form_tag('/users/search/', method: "get") do
-    = label_tag "Name:"
-    = text_field_tag :name
+  = form_tag('/users/search/', method: "post") do
+    = label_tag "Email"
+    p
+        = text_field_tag :email
     = submit_tag "Search", name: nil
 
-p.users
+- unless @users.nil?
+    - for user in @users
+        p
+            | User
+            = user.id
+            |:
+            '
+            = user.email

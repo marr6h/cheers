@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :posts
   get 'users/search', to: 'users#search'
+  post 'users/search', to: 'users#search'
 end
