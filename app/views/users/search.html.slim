@@ -1,0 +1,10 @@
+p
+| Search users
+
+p
+  = form_tag('/users/search/', method: "get") do
+    = label_tag "Name:"
+    = text_field_tag :name
+    = submit_tag "Search", name: nil
+
+p.users
