@@ -58,8 +58,9 @@ main.main__container
     li.feed__card-item
       .feed__profile
         .feed__profile-user-icon
-        p.feed__profile-name 鈴木
-        p.feed__date 30分前に投稿
+        .feed__profile-user-info
+          p.feed__profile-name 鈴木
+          p.feed__date 30分前に投稿
         .card-action__button-container
           button.button-default.font-en.js-modal-open data-target="cheers1" Cheers!
         #cheers1.modal-content
@@ -91,8 +92,9 @@ main.main__container
     li.feed__card-item
       .feed__profile
         .feed__profile-user-icon
-        p.feed__profile-name 佐藤
-        p.feed__date 30分前に投稿
+        .feed__profile-user-info
+          p.feed__profile-name 佐藤
+          p.feed__date 30分前に投稿
         .card-action__button-container
           button.button-default.font-en.js-modal-open data-target="cheers2" Cheers!
         #cheers2.modal-content
@@ -124,8 +126,9 @@ main.main__container
     li.feed__card-item
       .feed__profile
         .feed__profile-user-icon
-        p.feed__profile-name 田中
-        p.feed__date 30分前に投稿
+        .feed__profile-user-info
+          p.feed__profile-name 田中
+          p.feed__date 30分前に投稿
         .card-action__button-container
           button.button-default.font-en.js-modal-open data-target="cheers3" Cheers!
         #cheers3.modal-content
@@ -168,3 +171,23 @@ footer.footer
       li.footer__link-list-item
         =link_to('お問い合わせ', '#', class: 'footer__link')
     p.footer_copyright.font-en © 2017 Cheers! all rights reserved.
+
+.mobile-menu
+  ul.mobile-menu__items
+    li.mobile-menu__item
+      .icon-link
+        =link_to '#' do
+          i.fa.fa-home
+          p.icon-link-text ホーム
+    li.mobile-menu__item
+      .icon-link
+        =link_to '#' do
+          i.fa.fa-pencil
+          p.icon-link-text 投稿
+    li.mobile-menu__item
+      .icon-link
+        =link_to '#' do
+          i.fa.fa-bell
+          p.icon-link-text 通知
+    li.mobile-menu__item
+      .user-icon.js-menu

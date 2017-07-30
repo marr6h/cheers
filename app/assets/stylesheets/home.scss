@@ -22,6 +22,10 @@ body {
 .main__container {
   max-width: 680px;
   margin: 0 auto;
+  @media screen and (max-width: 680px) {
+    width: 100%;
+    padding: 0 10px;
+  }
 }
 
 /** modal **/
@@ -44,6 +48,9 @@ body {
   position: fixed;
   text-align: left;
   z-index: 2;
+  @media screen and (max-width: 680px) {
+    width: 100%;
+  }
 }
 
 /** link **/
@@ -75,4 +82,31 @@ body {
 
 .done-text {
   font: 15px/1.5 "Yu Gothic";
+}
+
+/** sp menu**/
+.mobile-menu {
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #fff8d6;
+  @media screen and (max-width: 680px) {
+    display: block;
+  }
+}
+
+.mobile-menu__items {
+  display: flex;
+  align-items: center;
+  height: 54px;
+  font: 13px/1.5 "Yu Gothic";
+}
+
+.mobile-menu__item {
+  width: 25%;
+  text-align: center;
+  .user-icon {
+    margin: 0 auto;
+  }
 }

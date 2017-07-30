@@ -9,6 +9,9 @@
   width: 800px;
   margin: 0 auto;
   position: relative;
+  @media screen and (max-width: 680px) {
+    width: 100%;
+  }
 }
 
 .header__title {
@@ -25,6 +28,9 @@
   bottom: 0;
   right: 0;
   margin: auto;
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
 }
 
 .header__user-action-item {
@@ -35,13 +41,13 @@
   &:last-child {
     margin: 0;
   }
-  a {
-    color: #524b49;
-  }
 }
 
 .icon-link {
   text-align: center;
+  a {
+    color: #524b49;
+  }
 }
 
 .icon-link-text {
