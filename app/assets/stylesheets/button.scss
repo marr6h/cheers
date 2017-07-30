@@ -20,9 +20,14 @@
 /* feed card action*/
 .card-action__button-container {
   margin: 16px 0 0;
-  font-size: 22px;
+  @media screen and (max-width: 680px) {
+    margin: 0;
+  }
   .button-default {
     font-size: 22px;
+    @media screen and (max-width: 680px) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -30,6 +35,9 @@
 .my-action__button-container {
   .button-default{
     width: 160px;
+    @media screen and (max-width: 680px) {
+      width: auto;
+    }
     .fa {
       margin: 0 8px 0 0;
       font-size: 18px;
