@@ -1,0 +1,38 @@
+.form__container {
+  width: 360px;
+  padding: 24px;
+  background: #fff8d6;
+  border-radius: 4px;
+}
+
+.form-item {
+  margin: 0 0 20px;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.form-label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 1.4;
+}
+
+.form-control, .form-control-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: #eee;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  &:focus {
+    background: #fff;
+  }
+}
+
+.form-control-textarea {
+  height: 140px;
+  resize: vertical;
+}
