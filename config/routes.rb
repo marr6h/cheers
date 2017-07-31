@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :posts
   get 'users/search', to: 'users#search'
   post 'users/search', to: 'users#search'
+  get '/:username', to: 'home#user'
 end
