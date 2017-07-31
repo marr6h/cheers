@@ -1,0 +1,18 @@
+p
+| Search users
+
+p
+  = form_tag('/users/search/', method: "post") do
+    = label_tag "Email"
+    p
+        = text_field_tag :email
+    = submit_tag "Search", name: nil
+
+- unless @users.nil?
+    - for user in @users
+        p
+            | User
+            = user.id
+            |:
+            '
+            = user.email
