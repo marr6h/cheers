@@ -57,3 +57,4 @@ gem 'font-awesome-rails'
 gem "haml-rails", "~> 0.9"
 
 gem 'minitest', '~> 5.10', '!= 5.10.2'
+gem 'minitest-reporters',       '1.1.14'
