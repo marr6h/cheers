@@ -47,12 +47,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use slim template into project
-gem 'slim-rails'
-
-gem 'html2slim', '~> 0.2.0'
-
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 
 gem 'font-awesome-rails'
+
+gem "haml-rails", "~> 0.9"
