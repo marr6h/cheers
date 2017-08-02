@@ -1,0 +1,15 @@
+.container
+  %p New Post
+  %p
+    = form_for @post, :html => {class: 'post_form'} do |f|
+      .row
+        = f.label "Date Time"
+        = f.datetime_select :datetime
+      .row
+        = f.label "Location"
+        = f.text_field :location
+      .row
+        = f.label "Remarks"
+        = f.text_area :remarks
+      .row
+        = f.submit "submit"
