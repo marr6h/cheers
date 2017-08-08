@@ -1,0 +1,33 @@
+%footer.footer
+  .footer-inner
+    %h2.footer-logo.font-en Cheers!
+    %ul.footer__link-list-items
+      %li.footer__link-list-item
+        =link_to('ホーム', '#', class: 'footer__link')
+      %li.footer__link-list-item
+        =link_to('マイページ', '#', class: 'footer__link')
+      %li.footer__link-list-item
+        =link_to('ヘルプ', '#', class: 'footer__link')
+      %li.footer__link-list-item
+        =link_to('お問い合わせ', '#', class: 'footer__link')
+    %p.footer_copyright.font-en © 2017 Cheers! all rights reserved.
+
+.mobile-menu
+  %ul.mobile-menu__items
+    %li.mobile-menu__item
+      .icon-link
+        =link_to '#' do
+          %i.fa.fa-home
+          %p.icon-link-text ホーム
+    %li.mobile-menu__item
+      .icon-link
+        =link_to '#' do
+          %i.fa.fa-pencil
+          %p.icon-link-text 投稿
+    %li.mobile-menu__item
+      .icon-link
+        =link_to '#' do
+          %i.fa.fa-bell
+          %p.icon-link-text 通知
+    %li.mobile-menu__item
+      .user-icon.js-menu
