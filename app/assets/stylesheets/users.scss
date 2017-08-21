@@ -1,3 +1,127 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage-main__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.user-profile__container {
+  width: 240px;
+  padding: 24px;
+  background: #fff;
+}
+
+.user-profile__thumbnail {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: #eee;
+  border-radius: 50%;
+}
+
+.user-profile__name {
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.user-content {
+  width: 628px;
+  margin-left: auto;
+  background: #fff;
+}
+
+.user-content-nav__items {
+  display: flex;
+  padding: 0 24px;
+  border-bottom: solid 1px #eee;
+}
+
+.user-content-nav__item {
+  margin: 0 40px -1px 0;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.user-content-nav__link {
+  display: flex;
+  align-items: center;
+  padding: 14px 8px;
+  color: #666;
+}
+
+.user-content-nav__item.selected {
+  border-bottom: solid 2px #ff9d68;
+  .user-content-nav__link {
+    font-weight: bold;
+    color: #ff9d68;
+  }
+}
+
+.user-content-nav__icon {
+  margin: 0 4px 0 0;
+}
+
+.user-content-nav__text {
+  font: 12px/1.5 "Yu Gothic";
+}
+
+.user-content__list-item {
+  padding: 24px;
+  border-bottom: solid 1px #eee;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.user-content__notification {
+  display: flex;
+  align-items: center;
+}
+
+.user-content__thumbnail-container {
+  margin: 0 20px 0 0;
+  text-align: center;
+}
+
+.user-content__thumbnail {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto;
+  background: #eee;
+  border-radius: 50%;
+}
+
+.user-content__thumbnail.active {
+  box-shadow: 0px 0px 3.5px 1.5px rgba(255, 157, 104, 0.004);
+}
+
+.user-content__time {
+  margin: 4px 0 0;
+  font: 10px/1.5 "Yu Gothic";
+  color: #666;
+}
+
+.user-content__text {
+  font: 15px/1.5 "Yu Gothic";
+}
+
+.user-content__botton-container {
+  margin-left: auto;
+}
+
+.user-content__name-container {
+  margin-right: auto;
+}
+
+.user-content__post-status {
+  margin: 0 0 8px;
+  padding: 4px 8px;
+  font: 10px/1 "Yu Gothic";
+  color: #666;
+  border: solid 1px #dedede;
+  border-radius: 4px;
+}
+
+.user-content__post-status.active {
+  color: #ff9d68;
+  border-color: #ff9d68;
+}
