@@ -20,6 +20,11 @@
   text-align: center;
 }
 
+.header__title-link {
+  font-weight: bold;
+  color: #524b49;
+}
+
 .header__user-action-items {
   display: flex;
   align-items: center;
@@ -116,6 +121,7 @@
   width: 100%;
   height: 100%;
   padding: 10px 16px 10px 24px;
+  color: #524b49;
   &:hover {
     background: #fff8d6;
   }
