@@ -18,8 +18,7 @@ class PostsController < ApplicationController
     end
 
     private
-        def user_params
-             params.require(:post).permit(:location, :remarks)
-        end
-
+      def user_params
+        params.require(:post).permit(:drinking_status, :datetime, :location, :remarks)
+      end
 end
