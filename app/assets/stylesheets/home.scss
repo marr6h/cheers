@@ -28,6 +28,12 @@ body {
   }
 }
 
+.two-columns {
+  display: flex;
+  align-items: flex-start;
+  margin: 48px 0 0;
+}
+
 /** modal **/
 .js-modal-overlay {
   display: none;

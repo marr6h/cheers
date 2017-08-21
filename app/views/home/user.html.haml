@@ -1,1 +1,60 @@
-%p User
+%main.mypage-main__container
+  .two-columns
+    .user-profile__container
+      .user-profile__thumbnail
+      %p.user-profile__name こんの
+    .user-content
+      %nav.user-content-nav
+        %ul.user-content-nav__items
+          %li.user-content-nav__item.selected
+            = link_to '#', class: 'user-content-nav__link' do
+              %i.fa.fa-bell.user-content-nav__icon
+              %p.user-content-nav__text 通知一覧
+          %li.user-content-nav__item
+            = link_to '#', class: 'user-content-nav__link' do
+              %i.fa.fa-user.user-content-nav__icon
+              %p.user-content-nav__text 友達一覧
+      .user-content__container
+        %ul.user-content__list-items
+          %li.user-content__list-item
+            .user-content__notification
+              .user-content__thumbnail-container
+                .user-content__thumbnail
+                %p.user-content__time 30分前
+              %p.user-content__text
+                usernameからCheers!が届きました。
+                %br
+                この人と飲みに行く場合はCheers!Backを送ろう！
+              .user-content__botton-container
+                %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back1'}
+                  Cheers!Back
+              #cheers-back1.modal-content
+                %p.done-text-lg
+                  usernameさんに
+                  %span.font-en Cheers!Back
+                  を送りました。
+                %p.done-text
+                  usernameさんにLINEでメッセージを送って飲みに行こう！
+                .modal-link__container
+                  =link_to 'LINEで送る', '#', class: 'text-link primary'
+          %li.user-content__list-item
+            .user-content__notification
+              .user-content__thumbnail-container
+                .user-content__thumbnail
+                %p.user-content__time 30分前
+              %p.user-content__text
+                usernameからCheers!が届きました。
+                %br
+                この人と飲みに行く場合はCheers!Backを送ろう！
+              .user-content__botton-container
+                %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back2'}
+                  Cheers!Back
+              #cheers-back2.modal-content
+                %p.done-text-lg
+                  usernameさんに
+                  %span.font-en Cheers!Back
+                  を送りました。
+                %p.done-text
+                  usernameさんにLINEでメッセージを送って飲みに行こう！
+                .modal-link__container
+                  =link_to 'LINEで送る', '#', class: 'text-link primary'
