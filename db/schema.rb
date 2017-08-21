@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20170822020616) do
     t.datetime "datetime"
     t.string   "location"
     t.string   "remarks"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.integer  "drinking_status"
   end
 
   create_table "relationships", force: :cascade do |t|
