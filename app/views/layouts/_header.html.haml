@@ -24,7 +24,7 @@
           %li.header__menu-item
             =link_to('マイページ', '/user', class: 'header__menu-link')
           %li.header__menu-item
-            =link_to('友達一覧', '#', class: 'header__menu-link')
+            =link_to('友達一覧', '/following', class: 'header__menu-link')
           %li.header__menu-item
             - if user_signed_in?
               = link_to('ログアウト', destroy_user_session_path, :method => :delete, class: 'header__menu-link')

@@ -91,7 +91,7 @@
 }
 
 .user-content__thumbnail.active {
-  box-shadow: 0px 0px 3.5px 1.5px rgba(255, 157, 104, 0.004);
+  box-shadow: 0px 0px 3.5px 1.5px rgba(255, 157, 104, 0.8);
 }
 
 .user-content__time {
@@ -122,6 +122,7 @@
 }
 
 .user-content__post-status.active {
+  font-weight: bold;
   color: #ff9d68;
   border-color: #ff9d68;
 }
