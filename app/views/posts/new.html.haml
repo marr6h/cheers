@@ -1,17 +1,32 @@
 = provide(:title, "新規投稿")
 
-.container
-  %p New Post
-  %p
+%main.main__container
+  .content-title__container
+    %h2.content-title 今日の飲みたい度合いを投稿しよう！
+    %p.content-lead
+      あなたの今日の飲みたい度合いを登録すると友達の投稿を確認できます。
+      %br
+      投稿は後から編集できます。投稿してみよう！
+  .form__post-new
     = form_for @post, :html => {class: 'post_form'} do |f|
-      .row
-        = f.label "Date Time"
+      .form-item
+        = f.label "飲みたい度", class: 'form-label'
+        .form-radio__container
+          .form-radio
+            %input#degree1.post-new__radio{type: 'radio', name: 'degree'}
+            %label.post-new__radio-text{for: 'degree1'} めっちゃ飲みたい
+          .form-radio
+            %input#degree2.post-new__radio{type: 'radio', name: 'degree'}
+            %label.post-new__radio-text{for: 'degree2'} いまは飲みたくない
+        %p.form-note ※【いまは飲みたくない】を選択すると【飲みたい時間】以降の項目はスキップして投稿できます。
+      .form-item
+        = f.label "飲みたい時間", class: 'form-label'
         = f.datetime_select :datetime
-      .row
-        = f.label "Location"
-        = f.text_field :location
-      .row
-        = f.label "Remarks"
-        = f.text_area :remarks
-      .row
-        = f.submit "submit"
+      .form-item
+        = f.label "飲みたい場所", class: 'form-label'
+        = f.text_field :location, class: 'form-control', placeholder: '例：上野、秋葉原'
+      .form-item
+        = f.label "メッセージ", class: 'form-label'
+        = f.text_area :remarks, class: 'form-control-textarea'
+      .form-item
+        = f.submit "投稿する", class: 'button-default'
