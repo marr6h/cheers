@@ -1,3 +1,70 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.form__post-new {
+  margin: 24px 0 0;
+  padding: 40px 110px 20px;
+  background: #fff;
+}
+
+.form__post-new .form-item {
+  border-bottom: solid 1px #eee;
+}
+
+.form__post-new .form-item:last-child {
+  border-bottom: none;
+}
+
+.form-radio__container {
+  display: flex;
+  margin: 16px 0 0;
+}
+
+.form-radio {
+  margin: 0 24px 0 0;
+}
+
+.post-new__radio {
+  display: none;
+}
+
+.post-new__radio-text {
+  padding: 2px 0 0 24px;
+  position:relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #eee;
+    border-radius: 50%;
+  }
+}
+
+.post-new__radio:checked + .post-new__radio-text {
+  font-weight: bold
+}
+
+.post-new__radio:checked + .post-new__radio-text:before {
+  border-color: #ff9d63;
+}
+
+.post-new__radio:checked + .post-new__radio-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 11px;
+  height: 11px;
+  background: #ff9d63;
+  border-radius: 50%;
+}
+
+.form-note {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin: 12px 0 0;
+  font: 12px/1.5 "Yu Gothic";
+  color: #666;
+}
