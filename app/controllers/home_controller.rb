@@ -13,4 +13,9 @@ class HomeController < ApplicationController
       @user = User.where(username: params['username'])
     end
   end
+  
+  def following
+    @user = current_user
+    @following = @user.following
+  end
 end
