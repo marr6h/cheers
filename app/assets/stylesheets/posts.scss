@@ -1,7 +1,10 @@
 .form__post-new {
   margin: 24px 0 0;
-  padding: 40px 110px 20px;
+  padding: 40px 80px 20px;
   background: #fff;
+  @media screen and (max-width: 680px) {
+    padding: 24px;
+  }
 }
 
 .form__post-new .form-item {
@@ -15,10 +18,19 @@
 .form-radio__container {
   display: flex;
   margin: 16px 0 0;
+  @media screen and (max-width: 680px) {
+    display: block;
+  }
 }
 
 .form-radio {
   margin: 0 24px 0 0;
+  @media screen and (max-width: 680px) {
+    margin: 0 0 10px;
+    &:last-child {
+      margin: 0;
+    }
+  }
 }
 
 .post-new__radio {
@@ -67,4 +79,7 @@
   margin: 12px 0 0;
   font: 12px/1.5 "Yu Gothic";
   color: #666;
+  @media screen and (max-width: 680px) {
+    font-size: 10px;
+  }
 }
