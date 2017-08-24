@@ -4,7 +4,8 @@
   .two-columns
     .user-profile__container
       .user-profile__thumbnail
-      %p.user-profile__name こんの
+      %p.user-profile__name
+        = @user.email
     .user-content
       %nav.user-content-nav
         %ul.user-content-nav__items
@@ -19,14 +20,15 @@
       .user-content__container
         %ul.user-content__list-items
           %li.user-content__list-item
-            .user-content__notification
-              .user-content__thumbnail-container
-                .user-content__thumbnail
-                %p.user-content__time 30分前
-              %p.user-content__text
-                usernameからCheers!が届きました。
-                %br
-                この人と飲みに行く場合はCheers!Backを送ろう！
+            .user-content__inner
+              .user-content__main
+                .user-content__thumbnail-container
+                  .user-content__thumbnail
+                  %p.user-content__time 30分前
+                %p.user-content__text
+                  usernameからCheers!が届きました。
+                  %br
+                  この人と飲みに行く場合はCheers!Backを送ろう！
               .user-content__botton-container
                 %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back1'}
                   Cheers!Back
@@ -40,14 +42,15 @@
                 .modal-link__container
                   =link_to 'LINEで送る', '#', class: 'text-link primary'
           %li.user-content__list-item
-            .user-content__notification
-              .user-content__thumbnail-container
-                .user-content__thumbnail
-                %p.user-content__time 30分前
-              %p.user-content__text
-                usernameからCheers!が届きました。
-                %br
-                この人と飲みに行く場合はCheers!Backを送ろう！
+            .user-content__inner
+              .user-content__main
+                .user-content__thumbnail-container
+                  .user-content__thumbnail
+                  %p.user-content__time 30分前
+                %p.user-content__text
+                  usernameからCheers!が届きました。
+                  %br
+                  この人と飲みに行く場合はCheers!Backを送ろう！
               .user-content__botton-container
                 %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back2'}
                   Cheers!Back

@@ -16,20 +16,25 @@
 .form-label {
   display: block;
   margin: 0 0 8px;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1.4;
+  font: bold 15px/1.4 "Yu Gothic";
+  @media screen and (max-width: 680px) {
+    font-size: 12px;
+  }
 }
 
 .form-control, .form-control-textarea {
   width: 100%;
   padding: 12px 16px;
   background: #eee;
-  font-size: 15px;
+  font: 15px/1.4 "Yu Gothic";
   border: none;
   border-radius: 4px;
   &:focus {
     background: #fff;
+  }
+  @media screen and (max-width: 680px) {
+    font-size: 12px;
+    padding: 10px 12px;
   }
 }
 

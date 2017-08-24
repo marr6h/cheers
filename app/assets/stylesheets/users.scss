@@ -1,12 +1,16 @@
 .mypage-main__container {
-  max-width: 900px;
+  max-width: 940px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .user-profile__container {
   width: 240px;
   padding: 24px;
   background: #fff;
+  @media screen and (max-width: 680px) {
+    width: 100%;
+  }
 }
 
 .user-profile__thumbnail {
@@ -26,6 +30,10 @@
   width: 628px;
   margin-left: auto;
   background: #fff;
+  @media screen and (max-width: 680px) {
+    width: 100%;
+    margin: 24px 0 0;
+  }
 }
 
 .user-content-nav__items {
@@ -72,7 +80,16 @@
   }
 }
 
-.user-content__notification {
+.user-content__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @media screen and (max-width: 680px) {
+    display: block;
+  }
+}
+
+.user-content__main {
   display: flex;
   align-items: center;
 }
@@ -102,27 +119,42 @@
 
 .user-content__text {
   font: 15px/1.5 "Yu Gothic";
+  @media screen and (max-width: 680px) {
+    font-size: 12px;
+  }
 }
 
 .user-content__botton-container {
   margin-left: auto;
+  @media screen and (max-width: 680px) {
+    margin: 16px 0 0;
+  }
 }
 
 .user-content__name-container {
   margin-right: auto;
 }
 
+.user-content__name {
+  font: 15px/1 "Yu Gothic";
+}
+
 .user-content__post-status {
   margin: 0 0 8px;
   padding: 4px 8px;
-  font: 10px/1 "Yu Gothic";
-  color: #666;
-  border: solid 1px #dedede;
+  background: #ff9d68;
+  font: bold 11px/1 "Yu Gothic";
+  color: #fff;
   border-radius: 4px;
+  @media screen and (max-width: 680px) {
+    font-size: 10px;
+  }
 }
 
-.user-content__post-status.active {
-  font-weight: bold;
-  color: #ff9d68;
-  border-color: #ff9d68;
+.user-content__link {
+  margin: 0 0 0 auto;
+  @media screen and (max-width: 680px) {
+    margin: 16px 0 0;
+    text-align: center
+  }
 }

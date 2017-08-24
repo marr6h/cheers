@@ -3,7 +3,7 @@
     %h2.footer-logo.font-en Cheers!
     %ul.footer__link-list-items
       %li.footer__link-list-item
-        =link_to('ホーム', '#', class: 'footer__link')
+        =link_to('ホーム', '/', class: 'footer__link')
       %li.footer__link-list-item
         =link_to('マイページ', '#', class: 'footer__link')
       %li.footer__link-list-item
@@ -16,17 +16,17 @@
   %ul.mobile-menu__items
     %li.mobile-menu__item
       .icon-link
-        =link_to '#' do
+        =link_to '/' do
           %i.fa.fa-home
           %p.icon-link-text ホーム
     %li.mobile-menu__item
       .icon-link
-        =link_to '#' do
+        =link_to '/posts/new' do
           %i.fa.fa-pencil
           %p.icon-link-text 投稿
     %li.mobile-menu__item
       .icon-link
-        =link_to '#' do
+        =link_to '/user' do
           %i.fa.fa-bell
           %p.icon-link-text 通知
     %li.mobile-menu__item
