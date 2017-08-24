@@ -13,15 +13,18 @@
         = f.label "飲みたい度", class: 'form-label'
         .form-radio__container
           .form-radio
-            %input#degree1.post-new__radio{type: 'radio', name: 'degree'}
-            %label.post-new__radio-text{for: 'degree1'} めっちゃ飲みたい
+            = f.radio_button :drinking_status, Post::DRINKING_HIGH
+            めっちゃ飲みたい
           .form-radio
-            %input#degree2.post-new__radio{type: 'radio', name: 'degree'}
-            %label.post-new__radio-text{for: 'degree2'} いまは飲みたくない
+            = f.radio_button :drinking_status, Post::DRINKING_MIDDLE
+            普通に飲みたい
+          .form-radio
+            = f.radio_button :drinking_status, Post::DRINKING_LOW
+            いまは飲みたくない
         %p.form-note ※【いまは飲みたくない】を選択すると【飲みたい時間】以降の項目はスキップして投稿できます。
       .form-item
         = f.label "飲みたい時間", class: 'form-label'
-        = f.datetime_select :datetime
+        = f.select :datetime, datetime_options
       .form-item
         = f.label "飲みたい場所", class: 'form-label'
         = f.text_field :location, class: 'form-control', placeholder: '例：上野、秋葉原'
