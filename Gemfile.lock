@@ -38,11 +38,12 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    ansi (1.5.0)
     arel (7.1.4)
     bcrypt (3.1.11)
     bindex (0.5.0)
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (9.1.0)
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -104,6 +105,11 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
+    minitest-reporters (1.1.14)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.12.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -146,6 +152,7 @@ GEM
       railties (>= 4.2.0, < 5.3)
     ruby_parser (3.10.1)
       sexp_processor (~> 4.9)
+    ruby-progressbar (1.8.1)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -205,9 +212,12 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  minitest (~> 5.10, != 5.10.2)
+  minitest-reporters (= 1.1.14)
   pg (~> 0.20.0)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rails-i18n
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -217,4 +227,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.15.3
+   1.14.6

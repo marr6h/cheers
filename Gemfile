@@ -49,8 +49,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
 gem 'carrierwave', '~> 1.0'
 
 gem 'font-awesome-rails'
 
 gem "haml-rails", "~> 0.9"
+
+gem 'minitest', '~> 5.10', '!= 5.10.2'
+gem 'minitest-reporters',       '1.1.14'
+gem 'rails-i18n'

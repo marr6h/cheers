@@ -1,0 +1,28 @@
+div.container
+    p
+        | New Post
+    p
+        = form_for @post, :html => {class: 'post_form'} do |f|
+            div.row
+              div.col-md-2
+                = f.label "Drinking Status"
+              div.col-md-10
+                  = f.radio_button :drinking_status, Post::DRINKING_HIGH
+                  | DRINKING HIGH
+                  '
+                  = f.radio_button :drinking_status, Post::DRINKING_MIDDLE
+                  | DRINKING MIDDLE
+                  '
+                  = f.radio_button :drinking_status, Post::DRINKING_LOW
+                  | DRINKING LOW
+            div.row
+                = f.label "Date Time"
+                = f.select :datetime, datetime_options
+            div.row
+                = f.label "Location"
+                = f.text_field :location
+            div.row
+                = f.label "Remarks"
+                = f.text_area :remarks
+            div.row
+                = f.submit "submit"
