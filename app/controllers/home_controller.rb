@@ -3,8 +3,7 @@ class HomeController < ApplicationController
 
   def index
       @user = current_user
-      @posts = Post.where(user_id: @user.id)
-      @index = 0
+      @user.paginate(page: 10)
   end
 
   def user
@@ -12,8 +11,9 @@ class HomeController < ApplicationController
     if @user.nil?
       @user = User.where(username: params['username'])
     end
+    @following = @user.following
   end
-  
+
   def following
     @user = current_user
     @following = @user.following
