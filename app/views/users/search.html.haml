@@ -1,13 +1,49 @@
 = provide(:title, "ユーザー検索")
 
-%p Search users
-
-%p
-  = form_tag('/users/search/', method: "post") do
-    = label_tag "Email"
-    %p
-      = text_field_tag :email
-    = submit_tag "Search", name: nil
+%main.mypage-main__container
+  .two-columns
+    .user-profile__container
+      .user-profile__thumbnail
+      %p.user-profile__name
+        こんの
+    .user-content
+      %nav.user-content-nav
+        %ul.user-content-nav__items
+          %li.user-content-nav__item
+            = link_to '/user', class: 'user-content-nav__link' do
+              %i.fa.fa-bell.user-content-nav__icon
+              %p.user-content-nav__text 通知一覧
+          %li.user-content-nav__item
+            = link_to '/following', class: 'user-content-nav__link' do
+              %i.fa.fa-user.user-content-nav__icon
+              %p.user-content-nav__text 友達一覧
+          %li.user-content-nav__item.selected
+            = link_to '/users/serch', class: 'user-content-nav__link' do
+              %i.fa.fa-user-plus.user-content-nav__icon
+              %p.user-content-nav__text 友達追加
+      .user-content__container
+        %ul.user-content__list-items
+          %li.user-content__list-item
+            %p.user-content__title メールアドレスで友達を検索できます
+            .user-content__inner
+              .user-content__main
+                = form_tag('/users/search/', method: "post") do
+                  .form-item
+                    = label_tag "メールアドレス"
+                    = text_field_tag :email
+              .user-content__botton-container
+                %button.button-default
+                  = submit_tag "検索", name: nil
+          %li.user-content__list-item
+            .user-content__inner
+              .user-content__main
+                .user-content__thumbnail-container
+                  .user-content__thumbnail
+                .user-content__name-container
+                  %p.user-content__name Junpei Ibayashi
+              .user-content__botton-container
+                %button.button-default
+                  友達追加する
 
 - unless @users.nil?
   - for user in @users
