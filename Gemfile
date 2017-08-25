@@ -58,4 +58,4 @@ gem "haml-rails", "~> 0.9"
 
 gem 'minitest', '~> 5.10', '!= 5.10.2'
 gem 'minitest-reporters',       '1.1.14'
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 5.0.0'
