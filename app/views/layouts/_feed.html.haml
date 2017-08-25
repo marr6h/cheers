@@ -1,3 +1,9 @@
+| Show posts by following user
+%br
+- unless @user.following.nil?
+  - for f in @user.following
+    = f.email
+
 %ul.feed__card-items
   %li.feed__card-item
     .feed__profile
