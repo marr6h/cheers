@@ -13,5 +13,6 @@ module Myapp
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :ja
     config.generators.template_engine = :haml
+    config.time_zone = 'Tokyo'
   end
 end
