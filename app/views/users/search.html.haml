@@ -31,17 +31,7 @@
                 = form_tag('/users/search/', method: "post") do
                   .form-item
                     = label_tag "メールアドレス"
-                    = text_field_tag :email, '', id: 'search_user_email'
+                    = text_field_tag :email, '', id: 'search_user_email', class: 'form-control'
               .user-content__botton-container
-                %button.button-default
-                  = submit_tag "検索", name: nil, id: 'search_user'
+                = submit_tag "検索", name: nil, id: 'search_user', class: 'button-default'
           %li.user-content__list-item#search_result
-            .user-content__inner
-              .user-content__main
-                .user-content__thumbnail-container
-                  .user-content__thumbnail
-                .user-content__name-container
-                  %p.user-content__name Junpei Ibayashi
-              .user-content__botton-container
-                %button.button-default
-                  友達追加する
