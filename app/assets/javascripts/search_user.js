@@ -6,8 +6,8 @@ $(function(){
             $("#search_result").empty();
             for (var i = 0; i < data.length; i++) {
                 var user = data[i];
-                var row = $('<li>');
-                row.append($("<li>").append($('<div>')).append($('<div>').text(user.email)).append($('<button>').text('フォローする')));
+                var row = $('<div class="user-content__inner">');
+                row.append($('<div class="user-content__main">').append($('<div class="user-content__thumbnail-container"><div class="user-content__thumbnail">')).append($('<p class="user-content__name">').text(user.email)).append($('<div class="user-content__botton-container"><button class="button-default">友達追加</button></div>')));
                 $('#search_result').append(row);
             }
         });
