@@ -19,7 +19,7 @@
               %i.fa.fa-user.user-content-nav__icon
               %p.user-content-nav__text 友達一覧
           %li.user-content-nav__item.selected
-            = link_to '/users/serch', class: 'user-content-nav__link' do
+            = link_to '/users/search', class: 'user-content-nav__link' do
               %i.fa.fa-user-plus.user-content-nav__icon
               %p.user-content-nav__text 友達追加
       .user-content__container
@@ -34,4 +34,4 @@
                     = text_field_tag :email, '', id: 'search_user_email', class: 'form-control'
               .user-content__botton-container
                 = submit_tag "検索", name: nil, id: 'search_user', class: 'button-default'
-          %li.user-content__list-item#search_result
+          #search_result

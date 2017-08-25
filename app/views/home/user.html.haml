@@ -18,6 +18,10 @@
             = link_to '/following', class: 'user-content-nav__link' do
               %i.fa.fa-user.user-content-nav__icon
               %p.user-content-nav__text 友達一覧
+          %li.user-content-nav__item
+            = link_to '/users/search', class: 'user-content-nav__link' do
+              %i.fa.fa-user-plus.user-content-nav__icon
+              %p.user-content-nav__text 友達追加
       .user-content__container
         %ul.user-content__list-items
           %li.user-content__list-item
