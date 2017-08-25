@@ -1,12 +1,46 @@
-| Show posts by following user
-%br
-- unless @user.following.nil?
-  - following = @user.following
-  - for f in following
-    - if f.is_post?
-      = f.latest_post.remarks
-
 %ul.feed__card-items
+  - unless @user.following.nil?
+    - following = @user.following
+    - for f in following
+      - if f.is_post?
+        %li.feed__card-item
+          .feed__profile
+            .feed__profile-user-icon
+            .feed__profile-user-info
+              %p.feed__profile-name 鈴木
+              %p.feed__date 30分前に投稿
+            .card-action__button-container
+              %button.button-default.font-en.js-modal-open{'data-target': 'cheers_id1'}
+                Cheers!
+            #cheers_id1.modal-content
+              %p.done-text-lg
+                鈴木さんに
+                %span.font-en Cheers!
+                を送りました。
+              %p.done-text
+                鈴木さんからのメッセージをお待ちください。
+                %br
+                メッセージがきたら飲みに行こう！
+              .modal-link__container
+                %span.text-link.secondary.js-modal-close 他の人の投稿を見る
+                =link_to '通知一覧へ', '/user', class: 'text-link primary'
+          .feed__content
+            .feed__content-two-columns
+              .feed__detail
+                %i.fa.fa-map-marker.feed-icon
+                %p.feed__detail-text
+                  = f.latest_post.location
+                  %span 周辺
+              .feed__detail
+                %i.fa.fa-clock-o.feed-icon
+                %p.feed__detail-text
+                  = f.latest_post.datetime
+                  %span 頃から
+            .feed__comment
+              %p
+                = f.latest_post.remarks
+
+
   %li.feed__card-item
     .feed__profile
       .feed__profile-user-icon
