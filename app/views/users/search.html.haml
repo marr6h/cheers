@@ -1,5 +1,5 @@
 = provide(:title, "ユーザー検索")
-= javascript_include_tag "search_user.js"
+= javascript_include_tag "search_user"
 
 %main.mypage-main__container
   .two-columns
@@ -31,11 +31,11 @@
                 = form_tag('/users/search/', method: "post") do
                   .form-item
                     = label_tag "メールアドレス"
-                    = text_field_tag :email
+                    = text_field_tag :email, '', id: 'search_user_email'
               .user-content__botton-container
                 %button.button-default
-                  = submit_tag "検索", name: nil
-          %li.user-content__list-item
+                  = submit_tag "検索", name: nil, id: 'search_user'
+          %li.user-content__list-item#search_result
             .user-content__inner
               .user-content__main
                 .user-content__thumbnail-container
@@ -45,9 +45,3 @@
               .user-content__botton-container
                 %button.button-default
                   友達追加する
-
-- unless @users.nil?
-  - for user in @users
-    %p User
-    = user.id
-    = user.email
