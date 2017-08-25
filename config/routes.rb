@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post 'users/search', to: 'users#search'
   get '/:username', to: 'home#user'
   get '/api/users/search', to: 'users#user_search'
+  get '/api/users/follow', to: 'users#follow'
+  get '/api/users/unfollow', to: 'users#unfollow'
 end
