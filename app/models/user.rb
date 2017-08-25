@@ -29,4 +29,19 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
 
+  def is_post?
+      if (posts.nil? || posts.last.nil?)
+          return false
+      end
+      t = Time.current
+      if t.hour < 6
+          t = t - 1.day
+      end
+      return !(posts.last.datetime.utc < t.beginning_of_day.utc)
+  end
+
+  def latest_post
+      posts.last
+  end
+
 end
