@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
     def index
         @user = current_user
@@ -13,6 +14,38 @@ class UsersController < ApplicationController
         end
         respond_to do |format|
             format.json {render json: @users.as_json}
+            format.any
+        end
+    end
+
+    def follow
+        status = false
+        user = current_user
+        other_user = params.include?(:id) ? User.find(params[:id]) : nil
+        unless other_user.nil?
+            unless user.following?(other_user)
+                user.follow(other_user)
+                status = true
+            end
+        end
+        respond_to do |format|
+            format.json {render json: {'status': status}}
+            format.any
+        end
+    end
+
+    def unfollow
+        status = false
+        user = current_user
+        other_user = params.include?(:id) ? User.find(params[:id]) : nil
+        unless other_user.nil?
+            if user.following?(other_user)
+                user.unfollow(other_user)
+                status = true
+            end
+        end
+        respond_to do |format|
+            format.json {render json: {'status': status}}
             format.any
         end
     end
