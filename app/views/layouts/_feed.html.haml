@@ -1,8 +1,10 @@
 | Show posts by following user
 %br
 - unless @user.following.nil?
-  - for f in @user.following
-    = f.email
+  - following = @user.following
+  - for f in following
+    - if f.is_post?
+      = f.latest_post.remarks
 
 %ul.feed__card-items
   %li.feed__card-item

@@ -3,7 +3,6 @@ class HomeController < ApplicationController
 
   def index
       @user = current_user
-      @user.paginate(page: 10)
   end
 
   def user
