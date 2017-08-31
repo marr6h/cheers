@@ -40,6 +40,7 @@
 .post-new__radio-text {
   padding: 2px 0 0 24px;
   position:relative;
+  font: 15px/1.4 "Yu Gothic";
   &:before {
     content: "";
     display: block;
@@ -50,6 +51,14 @@
     height: 15px;
     border: 2px solid #eee;
     border-radius: 50%;
+  }
+  @media screen and (max-width: 680px) {
+    padding: 1px 0 0 18px;
+    font-size: 12px;
+    &:before {
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 
@@ -71,6 +80,10 @@
   height: 11px;
   background: #ff9d63;
   border-radius: 50%;
+  @media screen and (max-width: 680px) {
+    width: 6px;
+    height: 6px;
+  }
 }
 
 .form-note {
