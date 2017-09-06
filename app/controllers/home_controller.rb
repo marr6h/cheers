@@ -1,7 +1,11 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
+    unless user_signed_in?
+      render :file => 'layouts/front.html.haml', :layout => false
+      return
+    end
       @user = current_user
   end
 
