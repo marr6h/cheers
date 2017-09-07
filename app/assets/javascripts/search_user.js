@@ -19,7 +19,7 @@ $(function(){
                 var name = $('<div>').addClass('user-content__name-container');
                 name.append($('<p>').addClass('user-content__name').text(user.username));
                 main.append(name);
-                var button = $('<div>').addClass('user-content__botton-container');
+                var button = $('<div>').addClass('user-content__button-container');
                 button.append($('<button>').addClass('button-default').text('友達追加する'));
                 inner.append(button);
                 $('#search_result').append(row);
