@@ -7,7 +7,8 @@ class PostsController < ApplicationController
         @post = Post.new(user_params)
         @post.user_id = current_user.id
         if @post.save
-            redirect_to @post
+            redirect_to :root
+            return
         else
             render 'new'
         end
