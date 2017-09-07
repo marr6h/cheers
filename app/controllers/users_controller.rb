@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     def user_search
         @users = {}
-        if params[:email]
+        if params[:email].present?
             @users = User.where('email LIKE ?', "%#{params[:email]}%").order('created_at DESC').limit(10)
         end
         respond_to do |format|
