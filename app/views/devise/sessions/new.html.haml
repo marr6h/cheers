@@ -1,16 +1,26 @@
-%h2 Log in
-.form__container
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .form-item
-      = f.label :email, class: "form-label"
-      = f.email_field :email, autofocus: true, class: "form-control"
-    .form-item
-      = f.label :password, class: "form-label"
-      = f.password_field :password, autocomplete: "off", class: "form-control"
-    - if devise_mapping.rememberable?
+= provide(:title, "ログイン")
+
+%main.main__container
+  .content-title__container
+    %h2.content-title ログイン
+    %p.content-lead
+      登録済みのアカウント情報とパスワードを入力してください。
+  .form__post-new
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-item
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .form-item
-      = f.submit "ログイン", class: "button-default"
-= render "devise/shared/links"
+        = f.label :email, class: "form-label"
+        = f.email_field :email, autofocus: true, class: "form-control"
+      .form-item
+        = f.label :password, class: "form-label"
+        = f.password_field :password, autocomplete: "off", class: "form-control"
+        .form-link__container
+          = link_to "パスワードを忘れた", new_password_path(resource_name), class: 'text-link primary'
+      - if devise_mapping.rememberable?
+        .form-item
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .form-item
+        = f.submit "ログイン", class: "button-default"
+  %ul.shared__link-items
+    %li.shared__link-item
+      = link_to "新規登録はこちら", new_registration_path(resource_name), class: 'text-link primary'
