@@ -9,6 +9,15 @@
   }
 }
 
+.home__body {
+  .footer {
+    @media screen and (max-width: 680px) {
+      margin: 40px 0 0;
+      border-bottom: none;
+    }
+  }
+}
+
 .footer-inner {
   max-width: 800px;
   margin: 0 auto;

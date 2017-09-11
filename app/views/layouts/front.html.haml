@@ -1,0 +1,97 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no'}
+    %title
+      = full_title(yield(:title))
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'foam'
+  %body.home__body
+    .home-top__content
+      %header.home-header
+        .header__inner
+          %ul.header__user-action-items
+            %li.header__user-action-item
+              = link_to '会員登録済みの方はこちら', new_user_session_path
+      .home-top__container
+        .home-top-title__container
+          %h1.home-top-title.font-en Cheers!
+          %p.home-top-lead
+            今日も誰かと飲みに行こう。
+            %br
+            このサービスは今日飲みに行く友達を探せます。ここに文章が入りますここに文章が入りますここに文章が入ります
+        .home-top__form-pc
+          .form__container
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = devise_error_messages!
+              .form-item
+                = f.label :email, class: "form-label"
+                = f.email_field :email, autofocus: true, class: "form-control"
+              .form-item
+                = f.label :password, class: "form-label"
+                = f.password_field :password, autocomplete: "off", class: "form-control"
+              .form-item
+                = f.label :password_confirmation, class: "form-label"
+                = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+              .form-item
+                = f.submit "登録", class: "button-default"
+        .home-top__form-sp
+          = link_to '新規登録', new_registration_path(resource_name), class: "button-default"
+    #canvas-container
+      %canvas#sineCanvas
+    %main.home-main__container
+      %section.home-main__content
+        %ul.home-main__list-items
+          %li.home-main__list-item
+            .home-main__list-item__image
+            .home-main__list-item__text
+              %h2.home-main__list-item__title ここに見出しが入ります
+              %p.home-main__list-item__description
+                ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+          %li.home-main__list-item.reverse
+            .home-main__list-item__image
+            .home-main__list-item__text
+              %h2.home-main__list-item__title ここに見出しが入ります
+              %p.home-main__list-item__description
+                ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+          %li.home-main__list-item
+            .home-main__list-item__image
+            .home-main__list-item__text
+              %h2.home-main__list-item__title ここに見出しが入ります
+              %p.home-main__list-item__description
+                ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+      %section.home-form__content
+        %h2.home-form__title
+          今すぐ
+          %span.font-en  Cheers!
+          を使って飲みに行こう！
+        .form__container
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .form-item
+              = f.label :email, class: "form-label"
+              = f.email_field :email, autofocus: true, class: "form-control"
+            .form-item
+              = f.label :password, class: "form-label"
+              = f.password_field :password, autocomplete: "off", class: "form-control"
+            .form-item
+              = f.label :password_confirmation, class: "form-label"
+              = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+            .form-item
+              = f.submit "登録", class: "button-default"
+    %footer.footer
+      .footer-inner
+        %h2.footer-logo.font-en Cheers!
+        %ul.footer__link-list-items
+          %li.footer__link-list-item
+            =link_to('ホーム', '/', class: 'footer__link')
+          %li.footer__link-list-item
+            =link_to('ログイン', new_user_session_path, class: 'footer__link')
+          %li.footer__link-list-item
+            =link_to('ヘルプ', '#', class: 'footer__link')
+          %li.footer__link-list-item
+            =link_to('お問い合わせ', '#', class: 'footer__link')
+        %p.footer_copyright.font-en © 2017 Cheers! all rights reserved.
