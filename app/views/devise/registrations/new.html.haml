@@ -1,16 +1,24 @@
-%h2 Sign up
-.form__container
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .form-item
-      = f.label :email, class: "form-label"
-      = f.email_field :email, autofocus: true, class: "form-control"
-    .form-item
-      = f.label :password, class: "form-label"
-      = f.password_field :password, autocomplete: "off", class: "form-control"
-    .form-item
-      = f.label :password_confirmation, class: "form-label"
-      = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
-    .form-item
-      = f.submit "登録", class: "button-default"
-= render "devise/shared/links"
+= provide(:title, "新規登録")
+
+%main.main__container
+  .content-title__container
+    %h2.content-title 新規登録
+    %p.content-lead
+      メールアドレス、パスワードを入力してください。
+  .form__post-new
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .form-item
+        = f.label :email, class: "form-label"
+        = f.email_field :email, autofocus: true, class: "form-control"
+      .form-item
+        = f.label :password, class: "form-label"
+        = f.password_field :password, autocomplete: "off", class: "form-control"
+      .form-item
+        = f.label :password_confirmation, class: "form-label"
+        = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+      .form-item
+        = f.submit "新規登録", class: "button-default"
+  %ul.shared__link-items
+    %li.shared__link-item
+      = link_to "新規登録済みの方はこちら", new_session_path(resource_name), class: 'text-link primary'
