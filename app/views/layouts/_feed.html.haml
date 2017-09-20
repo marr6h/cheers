@@ -7,18 +7,18 @@
           .feed__profile
             .feed__profile-user-icon
             .feed__profile-user-info
-              %p.feed__profile-name 鈴木
+              %p.feed__profile-name username
               %p.feed__date 30分前に投稿
             .card-action__button-container
-              %button.button-default.font-en.js-modal-open{'data-target': 'cheers_id1'}
+              %button.button-default.font-en.js-modal-open{'data-target': 'cheers1'}
                 Cheers!
-            #cheers_id1.modal-content
+            #cheers1.modal-content
               %p.done-text-lg
-                鈴木さんに
+                usernameさんに
                 %span.font-en Cheers!
                 を送りました。
               %p.done-text
-                鈴木さんからのメッセージをお待ちください。
+                usernameさんからのメッセージをお待ちください。
                 %br
                 メッセージがきたら飲みに行こう！
               .modal-link__container
@@ -39,110 +39,3 @@
             .feed__comment
               %p
                 = f.latest_post.remarks
-
-
-  %li.feed__card-item
-    .feed__profile
-      .feed__profile-user-icon
-      .feed__profile-user-info
-        %p.feed__profile-name 鈴木
-        %p.feed__date 30分前に投稿
-      .card-action__button-container
-        %button.button-default.font-en.js-modal-open{'data-target': 'cheers1'}
-          Cheers!
-      #cheers1.modal-content
-        %p.done-text-lg
-          鈴木さんに
-          %span.font-en Cheers!
-          を送りました。
-        %p.done-text
-          鈴木さんからのメッセージをお待ちください。
-          %br
-          メッセージがきたら飲みに行こう！
-        .modal-link__container
-          %span.text-link.secondary.js-modal-close 他の人の投稿を見る
-          =link_to '通知一覧へ', '/user', class: 'text-link primary'
-    .feed__content
-      .feed__content-two-columns
-        .feed__detail
-          %i.fa.fa-map-marker.feed-icon
-          %p.feed__detail-text
-            上野、秋葉原
-            %span 周辺
-        .feed__detail
-          %i.fa.fa-clock-o.feed-icon
-          %p.feed__detail-text
-            19:00
-            %span 頃から
-      .feed__comment
-        %p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
-  %li.feed__card-item
-    .feed__profile
-      .feed__profile-user-icon
-      .feed__profile-user-info
-        %p.feed__profile-name 佐藤
-        %p.feed__date 30分前に投稿
-      .card-action__button-container
-        %button.button-default.font-en.js-modal-open{'data-target': 'cheers2'}
-          Cheers!
-      #cheers2.modal-content
-        %p.done-text-lg
-          佐藤さんに
-          %span.font-en Cheers!
-          を送りました。
-        %p.done-text
-          佐藤さんからのメッセージをお待ちください。
-          %br
-          メッセージがきたら飲みに行こう！
-        .modal-link__container
-          %span.text-link.secondary.js-modal-close 他の人の投稿を見る
-          =link_to '通知一覧へ', '/user', class: 'text-link primary'
-    .feed__content
-      .feed__content-two-columns
-        .feed__detail
-          %i.fa.fa-map-marker.feed-icon
-          %p.feed__detail-text
-            上野、秋葉原
-            %span 周辺
-        .feed__detail
-          %i.fa.fa-clock-o.feed-icon
-          %p.feed__detail-text
-            19:00
-            %span 頃から
-      .feed__comment
-        %p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
-  %li.feed__card-item
-    .feed__profile
-      .feed__profile-user-icon
-      .feed__profile-user-info
-        %p.feed__profile-name 田中
-        %p.feed__date 30分前に投稿
-      .card-action__button-container
-        %button.button-default.font-en.js-modal-open{'data-target': 'cheers3'}
-          Cheers!
-      #cheers3.modal-content
-        %p.done-text-lg
-          田中さんに
-          %span.font-en Cheers!
-          を送りました。
-        %p.done-text
-          佐藤さんからのメッセージをお待ちください。
-          %br
-          メッセージがきたら飲みに行こう！
-        .modal-link__container
-          %span.text-link.secondary.js-modal-close 他の人の投稿を見る
-          =link_to '通知一覧へ', '/user', class: 'text-link primary'
-    .feed__content
-      .feed__content-two-columns
-        .feed__detail
-          %i.fa.fa-map-marker.feed-icon
-          %p.feed__detail-text
-            上野、秋葉原
-            %span 周辺
-        .feed__detail
-          %i.fa.fa-clock-o.feed-icon
-          %p.feed__detail-text
-            19:00
-            %span 頃から
-      .feed__comment
-        %p ここにコメントが入りますここにコメントが入りますここにコメントが入ります
