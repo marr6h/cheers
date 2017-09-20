@@ -83,6 +83,10 @@
 .user-content__title {
   margin: 0 0 16px;
   font: bold 15px/1.5 "Yu Gothic";
+  @media screen and (max-width: 680px) {
+    margin: 0 0 10px;
+    font-size: 12px;
+  }
 }
 
 .user-content__inner {
@@ -97,6 +101,13 @@
 .user-content__main {
   display: flex;
   align-items: center;
+  position: relative;
+  &.search {
+    width: 100%;
+    .form-item {
+      padding: 0;
+    }
+  }
 }
 
 .user-content__thumbnail-container {
@@ -163,3 +174,11 @@
     text-align: center
   }
 }
+
+.user-content__search-button-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+

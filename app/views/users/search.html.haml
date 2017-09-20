@@ -27,11 +27,10 @@
           %li.user-content__list-item
             %p.user-content__title メールアドレスで友達を検索できます
             .user-content__inner
-              .user-content__main
-                = form_tag('/users/search/', method: "post") do
+              .user-content__main.search
+                = form_tag('/users/search/', method: "post", class: 'search-form') do
                   .form-item
-                    = label_tag "メールアドレス"
-                    = text_field_tag :email, '', id: 'search_user_email', class: 'form-control'
-              .user-content__button-container
-                = submit_tag "検索", name: nil, id: 'search_user', class: 'button-default'
+                    = text_field_tag :email, '', id: 'search_user_email', class: 'form-control', placeholder: 'メールアドレスを入力してください'
+                .user-content__search-button-container
+                  = button_tag sanitize('<i class="fa fa-search"></i>'), name: nil, id: 'search_user', class: 'button-search'
           #search_result
