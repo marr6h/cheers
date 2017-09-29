@@ -34,7 +34,7 @@
               .feed__detail
                 %i.fa.fa-clock-o.feed-icon
                 %p.feed__detail-text
-                  = f.latest_post.datetime
+                  = f.latest_post.datetime.strftime('%H:%M')
                   %span 頃から
             .feed__comment
               %p
