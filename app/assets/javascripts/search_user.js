@@ -17,7 +17,7 @@ $(function(){
                 main.append(thumbnail);
                 inner.append(main);
                 var name = $('<div>').addClass('user-content__name-container');
-                name.append($('<p>').addClass('user-content__name').text(user.username));
+                name.append($('<p>').addClass('user-content__name').text(user.name));
                 main.append(name);
                 var button = $('<div>').addClass('user-content__button-container');
                 button.append($('<button>').addClass('button-default').text('友達追加する'));
