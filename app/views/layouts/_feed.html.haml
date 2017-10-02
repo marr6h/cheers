@@ -7,18 +7,21 @@
           .feed__profile
             .feed__profile-user-icon
             .feed__profile-user-info
-              %p.feed__profile-name username
+              %p.feed__profile-name
+                = f.name
               %p.feed__date 30分前に投稿
             .card-action__button-container
               %button.button-default.font-en.js-modal-open{'data-target': 'cheers1'}
                 Cheers!
             #cheers1.modal-content
               %p.done-text-lg
-                usernameさんに
+                = f.name
+                さんに
                 %span.font-en Cheers!
                 を送りました。
               %p.done-text
-                usernameさんからのメッセージをお待ちください。
+                = f.name
+                さんからのメッセージをお待ちください。
                 %br
                 メッセージがきたら飲みに行こう！
               .modal-link__container
