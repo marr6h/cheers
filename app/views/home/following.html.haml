@@ -1,8 +1,5 @@
 = provide(:title, "友達一覧")
 
-- for user in @following
-  = user.name
-
 %main.mypage-main__container
   .two-columns
     .user-profile__container
@@ -26,22 +23,17 @@
               %p.user-content-nav__text 友達追加
       .user-content__container
         %ul.user-content__list-items
-          %li.user-content__list-item
-            .user-content__inner
-              .user-content__main
-                .user-content__thumbnail-container
-                  .user-content__thumbnail
-                .user-content__name-container
-                  %p.user-content__name Junpei Ibayashi
-          %li.user-content__list-item
-            .user-content__inner
-              .user-content__main
-                .user-content__thumbnail-container
-                  .user-content__thumbnail.active
-                  %p.user-content__time 30分前
-                .user-content__name-container
-                  %p.user-content__post-status 今日の投稿があります
-                  %p.user-content__name inomatic
-              .user-content__link
-                = link_to '投稿内容を確認する', '#', class: 'text-link primary'
+          - for user in @following
+            %li.user-content__list-item
+              .user-content__inner
+                .user-content__main
+                  .user-content__thumbnail-container
+                    .user-content__thumbnail.active
+                    %p.user-content__time 30分前
+                  .user-content__name-container
+                    %p.user-content__post-status 今日の投稿があります
+                    %p.user-content__name
+                      = user.name
+                .user-content__link
+                  = link_to '投稿内容を確認する', '#', class: 'text-link primary'
 
