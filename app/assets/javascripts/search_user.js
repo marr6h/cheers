@@ -17,12 +17,26 @@ $(function(){
                 main.append(thumbnail);
                 inner.append(main);
                 var name = $('<div>').addClass('user-content__name-container');
-                name.append($('<p>').addClass('user-content__name').text(user.username));
+                name.append($('<p>').addClass('user-content__name').text(user.name));
                 main.append(name);
                 var button = $('<div>').addClass('user-content__button-container');
-                button.append($('<button>').addClass('button-default').text('友達追加する'));
+                var userIdAttr = 'user_' + user.id;
+                button.append($('<button>').addClass('add_relationship button-default').attr('id', userIdAttr).text('友達追加する'));
                 inner.append(button);
                 $('#search_result').append(row);
+                $("#" + userIdAttr).on('click', function(){
+                    var userIdStr = $(this).attr('id');
+                    var userId = userIdStr.split('user_')[1];
+                    var url = "/api/users/follow?id=" + userId;
+                    $.getJSON(url, function(data){
+                        if (data['status']) {
+                            alert(user.name + "さんと友達になりました。");
+                            $('#' + userIdStr).removeAttr('id');
+                        } else {
+                            alert("Connection refused");
+                        }
+                    });
+                })
             }
         });
     })
