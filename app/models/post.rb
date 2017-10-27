@@ -7,7 +7,13 @@ class Post < ApplicationRecord
 
     validates :drinking_status, presence: true, inclusion: {in: [DRINKING_HIGH, DRINKING_MIDDLE, DRINKING_LOW]}
     validate :expiration_datetime_cannot_be_in_the_past
-    
+
+    scope :latest, -> do
+        post_hash = Post.group(:user_id).maximum(:id)
+        posts = post_hash.values
+        where(id: posts)
+    end
+
     def expiration_datetime_cannot_be_in_the_past
       time = Time.now
       if datetime < Time.new(time.year, time.month, time.day, time.hour, 0, 0) + 1.hour
