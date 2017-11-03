@@ -13,20 +13,20 @@
             .card-action__button-container
               %button.button-default.font-en.js-modal-open{'data-target': 'cheers1'}
                 Cheers!
-            #cheers1.modal-content
-              %p.done-text-lg
-                = f.name
-                さんに
-                %span.font-en Cheers!
-                を送りました。
-              %p.done-text
-                = f.name
-                さんからのメッセージをお待ちください。
-                %br
-                メッセージがきたら飲みに行こう！
-              .modal-link__container
-                %span.text-link.secondary.js-modal-close 他の人の投稿を見る
-                =link_to '通知一覧へ', '/user', class: 'text-link primary'
+              #cheers1.modal-content
+                %p.done-text-lg
+                  = f.name
+                  さんに
+                  %span.font-en Cheers!
+                  を送りました。
+                %p.done-text
+                  = f.name
+                  さんからのメッセージをお待ちください。
+                  %br
+                  メッセージがきたら飲みに行こう！
+                .modal-link__container
+                  %span.text-link.secondary.js-modal-close 他の人の投稿を見る
+                  =link_to '通知一覧へ', '/user', class: 'text-link primary'
           .feed__content
             .feed__content-two-columns
               .feed__detail
