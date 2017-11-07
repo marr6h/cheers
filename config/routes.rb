@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/api/users/search', to: 'users#user_search'
   get '/api/users/follow', to: 'users#follow'
   get '/api/users/unfollow', to: 'users#unfollow'
+  post '/entries', to: 'entries#create'
 end
