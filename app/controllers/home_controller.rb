@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       render :file => 'layouts/front.html.haml', :layout => false
       return
     end
-      @user = current_user
+    @user = current_user
   end
 
   def user
@@ -15,6 +15,7 @@ class HomeController < ApplicationController
       @user = User.where(username: params['username'])
     end
     @following = @user.following
+    @entries = Entry.where(post_id: @user.latest_post)
   end
 
   def following
