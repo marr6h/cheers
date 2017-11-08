@@ -10,14 +10,28 @@ $(function(){
     //     $('.js-modal-overlay').remove();
     //   });
     // });
+    var entryId = $(this).attr('data-entry-id');
     var postId = $(this).attr('data-post-id');
+    var params = {
+        'entry':
+            {
+                'id': entryId != undefined ? entryId : null,
+                'post_id': postId}
+            }
     var url = '/entries';
-    $.post(url, {'entry': {'post_id': postId}},
+    var mes = 'Cheers!';
+    var userId = $(this).attr('data-user-id');
+    if (userId != undefined) {
+        url = url + '/' + postId;
+        params['entry']['entry_to'] = userId;
+        mes = mes + ' Back'
+    }
+    $.post(url, params,
         function(data){
             if (data['status']) {
-                alert("Cheers! を送信しました。");
+                alert(mes + " を送信しました。");
             } else {
-                alert("Cheers! が送信できませんでした。");
+                alert(mes + " が送信できませんでした。");
             }
         }
     );
