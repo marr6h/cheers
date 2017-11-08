@@ -59,7 +59,7 @@
                     %br
                     この人と飲みに行く場合はCheers!Backを送ろう！
                 .user-content__button-container
-                  %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back2'}
+                  %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back2', 'data-entry-id': entry.id, 'data-user-id': @user.id, 'data-post-id': entry.post_id}
                     Cheers!Back
                   .modal-content
                     %p.done-text-lg

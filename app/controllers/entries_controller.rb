@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
 
     def update
         params = entry_params
-        @entry = Entry.where(id: params[:post_id]).first
+        @entry = Entry.where(id: params[:id]).first
         status = false
         if !@entry.nil? && @entry.update(entry_to: params[:entry_to])
             status = true
@@ -26,6 +26,7 @@ class EntriesController < ApplicationController
 
     private
         def entry_params
-            params.require(:entry).permit(:post_id, :entry_to)
+            params.require(:entry).permit(:id, :post_id, :entry_to)
         end
+
 end
