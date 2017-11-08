@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/api/users/follow', to: 'users#follow'
   get '/api/users/unfollow', to: 'users#unfollow'
   post '/entries', to: 'entries#create'
+  post '/entries/:post_id', to: 'entries#update'
 end

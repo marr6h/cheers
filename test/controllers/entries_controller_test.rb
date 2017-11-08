@@ -7,18 +7,34 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
         sign_in users(:john)
     end
 
-    test 'should return success response if a post requested' do
+    test 'create action should return success response' do
         post '/entries', params: {entry: {post_id: nil}}, headers: {'Accept' => 'application/json'}
-        puts response.body
         data = JSON.parse(response.body)
         assert_response :success
         assert data.length > 0
         assert data['status'] == false
     end
 
-    test 'should status is false if an invalid post requested' do
+    test 'create action should return status is true if a post requested with valid params' do
         post '/entries', params: {:entry => {:post_id => posts(:one)}}, headers: {'Accept' => 'application/json'}
         data = JSON.parse(response.body)
         assert data['status'] == true
     end
+
+    test 'update action should return success response' do
+        url = '/entries/' + entries(:one).id.to_s
+        post url, params: {:entry => {:post_id => nil, :entry_to => nil}}, headers: {'Accept' => 'application/json'}
+        assert_response :success
+        data = JSON.parse(response.body)
+        assert data.length > 0
+        assert data['status'] == false
+    end
+
+    test 'update action should return status is true if a post requested with valid params' do
+        url = '/entries/' + entries(:one).id.to_s
+        post url, params: {:entry => {:post_id => posts(:one).id, :entry_to => users(:john).id}}, headers: {'Accept' => 'application/json'}
+        data = JSON.parse(response.body)
+        assert data['status'] == true
+    end
+
 end
