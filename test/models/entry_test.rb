@@ -11,7 +11,7 @@ class EntryTest < ActiveSupport::TestCase
       assert !entry.save
   end
 
-  test "Should require a entry_from" do
+  test "should require a entry_from" do
       entry = Entry.new
       entry.post_id = 0
       assert !entry.save
