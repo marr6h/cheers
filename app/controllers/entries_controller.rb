@@ -1,13 +1,13 @@
 class EntriesController < ApplicationController
     def create
-        @entry = Entry.new(entry_params)
-        @entry.entry_from = current_user.id
+        entry = Entry.new(entry_params)
+        entry.entry_from = current_user.id
         status = false
-        if @entry.save
+        if entry.save
             status = true
         end
         respond_to do |format|
-            format.json {render json: {'status' => status}}
+            format.json {render json: {'status' => status, 'errors' => entry.errors.messages}}
             format.any
         end
     end
@@ -20,7 +20,7 @@ class EntriesController < ApplicationController
             status = true
         end
         respond_to do |format|
-            format.json {render json: {'status' => status}}
+            format.json {render json: {'status' => status, 'errors' => entry.errors.messages}}
         end
     end
 

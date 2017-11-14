@@ -13,12 +13,14 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
         assert data.length > 0
         assert data['status'] == false
+        assert_not data['errors'].empty?
     end
 
     test 'create action should return status is true if a post requested with valid params' do
         post '/entries', params: {:entry => {:id => nil, :post_id => posts(:one)}}, headers: {'Accept' => 'application/json'}
         data = JSON.parse(response.body)
         assert data['status'] == true
+        assert data['errors'].empty?
     end
 
     test 'update action should return success response' do
@@ -28,6 +30,7 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
         data = JSON.parse(response.body)
         assert data.length > 0
         assert data['status'] == false
+        assert_not data['errors'].empty?
     end
 
     test 'update action should return status is true if a post requested with valid params' do
@@ -35,6 +38,7 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
         post url, params: {:entry => {:id => entries(:one), :post_id => posts(:one), :entry_to => users(:john).id}}, headers: {'Accept' => 'application/json'}
         data = JSON.parse(response.body)
         assert data['status'] == true
+        assert data['errors'].empty?
     end
 
 end
