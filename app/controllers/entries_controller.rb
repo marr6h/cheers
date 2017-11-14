@@ -2,6 +2,7 @@ class EntriesController < ApplicationController
     def create
         entry = Entry.new(entry_params)
         entry.entry_from = current_user.id
+        entry.cheer = 0
         status = false
         if entry.save
             status = true
@@ -14,9 +15,9 @@ class EntriesController < ApplicationController
 
     def update
         params = entry_params
-        @entry = Entry.where(id: params[:id]).first
+        entry = Entry.where(id: params[:id]).first
         status = false
-        if !@entry.nil? && @entry.update(entry_to: params[:entry_to])
+        if !entry.nil? && entry.update(entry_to: params[:entry_to], cheer: 1)
             status = true
         end
         respond_to do |format|
