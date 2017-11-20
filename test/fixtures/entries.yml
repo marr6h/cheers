@@ -5,10 +5,12 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-    post_id: posts(:one),
-    entry_to: nil,
-    entry_from: nil,
-# column: value
-#
+    post_id: posts(:one)
+    entry_to: nil
+    entry_from: nil
+
 two: {}
-# column: value
+first:
+    post_id: posts(:one)
+    entry_to: nil
+    entry_from: 1
