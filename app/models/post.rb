@@ -16,6 +16,10 @@ class Post < ApplicationRecord
 
     def expiration_datetime_cannot_be_in_the_past
       time = Time.now
+      if datetime.nil?
+        errors.add(:datetime, "Datetime can not be blank")
+        return
+      end
       if datetime < Time.new(time.year, time.month, time.day, time.hour, 0, 0) + 1.hour
         errors.add(:datetime, "Can't be in the past")
       end
