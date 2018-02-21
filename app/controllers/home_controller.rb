@@ -7,6 +7,7 @@ class HomeController < ApplicationController
       return
     end
     @user = current_user
+    @posts = @user.aggregate_post
   end
 
   def user
