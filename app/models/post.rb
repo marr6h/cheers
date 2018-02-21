@@ -24,4 +24,9 @@ class Post < ApplicationRecord
         errors.add(:datetime, "Can't be in the past")
       end
     end
+
+    def hour
+        return datetime.hour.to_s unless datetime.nil?
+    end
+
 end
