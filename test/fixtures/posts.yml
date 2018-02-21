@@ -9,3 +9,8 @@ two:
   datetime: 2017-07-28 07:39:49
   location: MyString
   remarks: MyString
+
+seventeen_post:
+    user_id: nil
+    datetime: <%= Time.new(Time.now.year, Time.now.month, Time.now.day, 19, 0, 0) %>
+    drinking_status: nil

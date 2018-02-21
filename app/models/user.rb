@@ -44,4 +44,8 @@ class User < ApplicationRecord
       posts.last
   end
 
+  def aggregate_post
+      {}
+  end
+
 end
