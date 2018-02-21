@@ -10,7 +10,3 @@ one:
     entry_from: nil
 
 two: {}
-first:
-    post_id: posts(:one)
-    entry_to: nil
-    entry_from: 1
