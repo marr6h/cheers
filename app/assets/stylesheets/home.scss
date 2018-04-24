@@ -19,7 +19,7 @@ a {
 }
 
 .main__container {
-  max-width: 680px;
+  max-width: 880px;
   margin: 0 auto;
   @media screen and (max-width: 680px) {
     width: 100%;
@@ -120,7 +120,8 @@ a {
   width: 100%;
   position: fixed;
   bottom: 0;
-  background: #fff8d6;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
   @media screen and (max-width: 680px) {
     display: block;
   }
@@ -129,8 +130,7 @@ a {
 .mobile-menu__items {
   display: flex;
   align-items: center;
-  height: 54px;
-  font: 13px/1.5 "Yu Gothic";
+  height: 60px;
 }
 
 .mobile-menu__item {
