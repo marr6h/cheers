@@ -77,18 +77,19 @@
 }
 
 .feed__detail {
-  width: 174px;
+  width: 48%;
   margin: 18px 0 0;
-  padding: 34px 16px 24px;
+  padding: 26px 0 14px;
   position: relative;
   border: solid 1px #eee;
-  @media screen and (max-width: 680px) {
-    width: 49%;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
 .feed__detail-text {
-  font: bold 15px/1.5 "Yu Gothic";
+  font-size: 14px;
+  line-height: 1.4;
   @media screen and (max-width: 680px) {
     font-size: 12px;
   }
@@ -122,14 +123,151 @@
 .feed__comment {
   margin: 12px 0 0;
   padding: 16px;
-  font: 15px/1.5 "Yu Gothic";
+  font-size: 14px;
+  line-height: 1.6;
   border: solid 1px #eee;
   @media screen and (max-width: 680px) {
+    padding: 8px;
     font-size: 12px;
   }
 }
 
-/** may action **/
+.feed__container {
+  position: relative;
+  &:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fae855;
+    z-index: -1;
+    @media screen and (max-width: 680px) {
+      width: 2px;
+      left: 22px;
+      right: auto;
+    }
+  }
+}
+
+.feed {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 0;
+  @media screen and (max-width: 680px) {
+    justify-content: flex-start;
+  }
+}
+
+.feed:nth-of-type(2n) {
+  justify-content: flex-start;
+}
+
+.feed-inner {
+  display: flex;
+  @media screen and (max-width: 680px) {
+    width: 100%;
+  }
+}
+
+.feed:nth-of-type(2n) .feed-inner {
+  flex-direction: row-reverse;
+  @media screen and (max-width: 680px) {
+    flex-direction: row;
+  }
+}
+
+.feed-time {
+  text-align: center;
+}
+
+.feed-time span {
+  display: inline-block;
+  padding: 6px 8px;
+  text-align: center;
+  background: red;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.feed-user-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  @media screen and (max-width: 680px) {
+    width: 48px;
+    height: 48px;
+  }
+  &:before {
+    content: "\f007";
+    display: block;
+    font-family: FontAwesome;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+    color: #ccc;
+    @media screen and (max-width: 680px) {
+      font-size: 34px;
+      line-height: 48px;
+    }
+  }
+}
+
+.feed-content {
+  flex: 1;
+  width: 380px;
+  margin: 0 0 0 20px;
+  padding: 10px 20px 20px;
+  position: relative;
+  background: #fff;
+  border: solid 1px #eee;
+  border-radius: 4px;
+  @media screen and (max-width: 680px) {
+    width: auto;
+    max-width: 380px;
+  }
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 28px;
+    left: -14px;
+    border-style: solid;
+    border-width: 10px 14px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    @media screen and (max-width: 680px) {
+      top: 12px;
+    }
+  }
+}
+
+.feed:nth-of-type(2n) .feed-content {
+  margin: 0 20px 0 0;
+  @media screen and (max-width: 680px) {
+    margin: 0 0 0 20px;
+  }
+  &:before {
+    left: auto;
+    right: -14px;
+    border-width: 10px 0 10px 14px;
+    border-color: transparent transparent transparent #fff;
+    @media screen and (max-width: 680px) {
+      left: -14px;
+      right: auto;
+      border-width: 10px 14px 10px 0;
+      border-color: transparent #fff transparent transparent;
+    }
+  }
+}
+
+/** my action **/
 .my-action {
   display: flex;
   align-items: center;
