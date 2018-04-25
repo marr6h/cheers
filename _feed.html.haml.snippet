@@ -1,0 +1,14 @@
+- @posts.each do |hour, post_array|
+  - hour_str = hour + ":00"
+  %p
+    = hour_str
+  - for post in post_array
+    %p
+      %div
+      %p
+        %span
+          場所：　
+          = post.location
+          &nbsp;
+          時間：　
+          = hour_str

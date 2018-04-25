@@ -44,4 +44,18 @@ class User < ApplicationRecord
       posts.last
   end
 
+  def aggregate_post
+      posts = {}
+      for follow_user in following
+          post = follow_user.latest_post
+          next if post.nil?
+          hour = post.hour
+          unless posts.include?(hour) then
+              posts[hour] = []
+          end
+          posts[hour].push post
+      end
+      posts
+  end
+
 end
