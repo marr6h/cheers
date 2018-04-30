@@ -1,45 +1,4 @@
 .feed__container
-  - unless @user.following.nil?
-    - following = @user.following
-    - for f in following
-      - if f.is_post?
-        .feed
-          .feed-inner
-            .feed-user-icon
-            .feed-content
-              .feed__content-two-columns
-                .feed__detail
-                  %i.fa.fa-map-marker.feed-icon
-                  %p.feed__detail-text
-                    = f.latest_post.location
-                    %span<> 周辺
-                .feed__detail
-                  %i.fa.fa-clock-o.feed-icon
-                  %p.feed__detail-text
-                    = f.latest_post.datetime.strftime('%H:%M')
-                    %span<> 頃から
-              .feed__comment
-                %p
-                  = f.latest_post.remarks
-              .card-action__button-container
-                %button.button.js-modal-open{'data-target': 'cheers1', 'data-post-id': f.latest_post.id}
-                  Cheers!
-                .modal-content
-                  %p.done-text-lg
-                    = f.name
-                    さんに
-                    %span<> Cheers!
-                    を送りました。
-                  %p.done-text
-                    = f.name
-                    さんからのメッセージをお待ちください。
-                    %br
-                    メッセージがきたら飲みに行こう！
-                  .modal-link__container
-                    %span.text-link.secondary.js-modal-close 他の人の投稿を見る
-                    =link_to '通知一覧へ', '/user', class: 'text-link primary'
-
-.feed__container
   - @posts.each do |hour, post_array|
     - hour_str = hour + ":00"
     %p.feed-time
@@ -62,3 +21,7 @@
                 %p.feed__detail-text
                   = hour_str
                   %span<> 頃から
+
+            .card-action__button-container
+              %button.button.js-modal-open{'data-target': 'cheers1'}
+                Cheers!
