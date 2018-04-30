@@ -38,3 +38,27 @@
                   .modal-link__container
                     %span.text-link.secondary.js-modal-close 他の人の投稿を見る
                     =link_to '通知一覧へ', '/user', class: 'text-link primary'
+
+.feed__container
+  - @posts.each do |hour, post_array|
+    - hour_str = hour + ":00"
+    %p.feed-time
+      %span
+        %i.fa.fa-clock-o
+        = hour_str
+    - for post in post_array
+      .feed
+        .feed-inner
+          .feed-user-icon
+          .feed-content
+            .feed__content-two-columns
+              .feed__detail
+                %i.fa.fa-map-marker.feed-icon
+                %p.feed__detail-text
+                  = post.location
+                  %span<> 周辺
+              .feed__detail
+                %i.fa.fa-clock-o.feed-icon
+                %p.feed__detail-text
+                  = hour_str
+                  %span<> 頃から
