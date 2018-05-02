@@ -47,8 +47,8 @@ class User < ApplicationRecord
   def aggregate_post
       posts = {}
       for follow_user in following
+          next if !follow_user.is_post?
           post = follow_user.latest_post
-          next if post.nil?
           hour = post.hour
           unless posts.include?(hour) then
               posts[hour] = []
