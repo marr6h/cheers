@@ -1,11 +1,15 @@
 class EntriesController < ApplicationController
     def create
         entry = Entry.new(entry_params)
-        entry.entry_from = current_user.id
-        entry.cheer = 0
-        status = false
-        if entry.save
-            status = true
+        if Entry.exists?(:post_id => entry.post_id, :entry_from => current_user.id)
+          status = false
+        else
+          entry.entry_from = current_user.id
+          entry.cheer = 0
+          status = false
+          if entry.save
+              status = true
+          end
         end
         respond_to do |format|
             format.json {render json: {'status' => status, 'errors' => entry.errors.messages}}
