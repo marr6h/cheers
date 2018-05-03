@@ -21,7 +21,7 @@ $(function(){
                 main.append(name);
                 var button = $('<div>').addClass('user-content__button-container');
                 var userIdAttr = 'user_' + user.id;
-                button.append($('<button>').addClass('add_relationship button-default').attr('id', userIdAttr).text('友達追加する'));
+                button.append($('<button>').addClass('add_relationship button').attr('id', userIdAttr).text('友達追加する'));
                 inner.append(button);
                 $('#search_result').append(row);
                 $("#" + userIdAttr).on('click', function(){
