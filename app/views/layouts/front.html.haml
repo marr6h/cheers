@@ -76,19 +76,8 @@
           今すぐCheers!を使って
           %br
           飲みに行こう！
-        .form__container
-          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            = devise_error_messages!
-            .form-item
-              = f.text_field :name, class: "form-control", placeholder: "名前"
-            .form-item
-              = f.email_field :email, class: "form-control", placeholder: "メールアドレス"
-            .form-item
-              = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード"
-            .form-item
-              = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", class: "form-control", placeholder: "パスワード確認"
-            .form-item
-              = f.submit "登録", class: "button"
+        .button__container
+          = link_to '無料新規登録', new_registration_path(resource_name), class: "button"
 
     %footer.footer
       .footer-inner

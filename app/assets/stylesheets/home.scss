@@ -277,6 +277,13 @@ a {
     margin: 12px auto 0;
     text-align: left;
   }
+  .button__container {
+    max-width: 300px;
+    margin: 50px auto 0;
+    @media screen and (max-width: 680px) {
+      margin-top: 40px;
+    }
+  }
 }
 
 
