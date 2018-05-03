@@ -5,7 +5,6 @@ class Post < ApplicationRecord
 
     belongs_to :user
 
-    validates :drinking_status, presence: true, inclusion: {in: [DRINKING_HIGH, DRINKING_MIDDLE, DRINKING_LOW]}
     validate :expiration_datetime_cannot_be_in_the_past
 
     scope :latest, -> do
