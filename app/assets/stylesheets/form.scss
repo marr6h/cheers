@@ -11,6 +11,12 @@
   &:last-child {
     margin: 0;
   }
+  &.form-button {
+    margin-top: 34px;
+    @media screen and (max-width: 680px) {
+      margin-top: 20px;
+    }
+  }
 }
 
 .form-label {
