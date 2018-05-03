@@ -16,9 +16,9 @@
           .header-logo
             %p Cheers!
           .header__inner
-            %ul.header__user-action-items
+            %ul.header__user-action-items.front
               %li.header__user-action-item
-                = link_to '会員登録済みの方はこちら', new_user_session_path
+                = link_to 'ログイン', new_user_session_path
       .home-top__container
         .columns.container
           .home-top-title__container
@@ -93,7 +93,4 @@
     %footer.footer
       .footer-inner
         %h2.footer-logo Cheers!
-        %ul.footer__link-list-items
-          %li.footer__link-list-item
-            =link_to('お問い合わせ', '#', class: 'footer__link')
-        %p.footer_copyright © 2017 Cheers! all rights reserved.
+        %p.footer_copyright © 2018 Cheers!

@@ -103,7 +103,8 @@
 .shared__link-items {
   display: flex;
   justify-content: flex-end;
-  margin: 24px 0 0;
+  max-width: 600px;
+  margin: 24px auto 0;
 }
 
 .shared__link-item {

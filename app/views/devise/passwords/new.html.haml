@@ -14,7 +14,7 @@
         = f.label :email, class: "form-label"
         = f.email_field :email, autofocus: true, class: "form-control"
       .form-item
-        = f.submit "送信", class: "button-default"
+        = f.submit "送信", class: "button"
   %ul.shared__link-items
     %li.shared__link-item
       = link_to "ログイン", new_session_path(resource_name), class: 'text-link primary'
