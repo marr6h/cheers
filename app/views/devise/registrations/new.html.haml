@@ -20,8 +20,8 @@
       .form-item
         = f.label :password_confirmation, class: "form-label"
         = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
-      .form-item
-        = f.submit "新規登録", class: "button-default"
+      .form-item.form-button
+        = f.submit "新規登録", class: "button"
   %ul.shared__link-items
     %li.shared__link-item
       = link_to "新規登録済みの方はこちら", new_session_path(resource_name), class: 'text-link primary'
