@@ -8,8 +8,20 @@
   width: 240px;
   padding: 24px;
   background: #fff;
+  position: relative;
   @media screen and (max-width: 680px) {
     width: 100%;
+  }
+}
+
+.user-profile__logout {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  &:hover {
+    text-decoration: underline;
   }
 }
 
