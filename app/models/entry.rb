@@ -5,4 +5,8 @@ class Entry < ApplicationRecord
         User.where(id: self.entry_from).first
     end
 
+    def to_user
+        User.where(id: self.entry_to).first
+    end
+
 end

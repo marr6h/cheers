@@ -49,3 +49,18 @@
                       usernameさんにLINEでメッセージを送って飲みに行こう！
                     .modal-link__container
                       =link_to 'LINEで送る', '#', class: 'text-link primary'
+          - for cheer in @cheers
+            %li.user-content__list-item
+              .user-content__inner
+                .user-content__main
+                  .user-content__thumbnail-container
+                    .user-content__thumbnail
+                    %p.user-content__time 30分前
+                  - if cheer.entry_from != @user.id
+                    %p.user-content__text
+                      = cheer.from_user.name
+                      とのみにいくことがきまりました。すぐに連絡をしよう!
+                  - else
+                    %p.user-content__text
+                      = cheer.to_user.name
+                      とのみにいくことがきまりました。すぐに連絡をしよう!
