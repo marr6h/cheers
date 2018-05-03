@@ -1,10 +1,10 @@
 body {
-	 -webkit-font-smoothing: antialiased;
-	 -moz-osx-font-smoothing: grayscale;
-	 -webkit-text-size-adjust: 100%;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-text-size-adjust: 100%;
   background: #f9f9f9;
-	 font-family: "Avenir","Arial Black","Arial","Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ ゴシック",sans-serif;
-	 color: #222;
+     font-family: "Avenir","Arial Black","Arial","Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ ゴシック",sans-serif;
+     color: #222;
   line-height: 1;
 }
 
@@ -53,7 +53,7 @@ a {
   z-index: 1;
 }
 
-	.modal-content {
+    .modal-content {
   display: none;
   width: 440px;
   padding: 28px 40px;
@@ -180,7 +180,7 @@ a {
 
 .home-top__container {
   padding: 60px 0;
-  background: url(home_main_image.jpg) no-repeat center;
+  background: image-url('home_main_image.jpg') no-repeat center;
   background-size: cover;
   .columns {
     align-items: center;
