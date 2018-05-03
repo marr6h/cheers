@@ -28,4 +28,9 @@ class Post < ApplicationRecord
         return datetime.hour.to_s unless datetime.nil?
     end
 
+    def is_valid_term?
+      expiration_datetime_cannot_be_in_the_past
+      return errors.empty?
+    end
+
 end

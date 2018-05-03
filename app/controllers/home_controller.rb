@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     end
     @following = @user.following
     @entries = Entry.where(post_id: @user.latest_post, cheer: 0)
-    @cheers = Entry.where(entry_to: @user.id, cheer: 1).or(Entry.where(entry_from: @user.id, cheer: 1))
+    @cheers = Entry.where(entry_to: @user.id, cheer: 1).or(Entry.where(entry_from: @user.id, cheer: 1)).uniq
   end
 
   def following

@@ -9,4 +9,8 @@ class Entry < ApplicationRecord
         User.where(id: self.entry_to).first
     end
 
+    def post
+        Post.where(id: self.post_id).first
+    end
+
 end
