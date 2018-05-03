@@ -24,28 +24,6 @@
               %p.user-content-nav__text 友達追加
       .user-content__container
         %ul.user-content__list-items
-          %li.user-content__list-item
-            .user-content__inner
-              .user-content__main
-                .user-content__thumbnail-container
-                  .user-content__thumbnail
-                  %p.user-content__time 30分前
-                %p.user-content__text
-                  usernameからCheers!が届きました。
-                  %br
-                  この人と飲みに行く場合はCheers!Backを送ろう！
-              .user-content__button-container
-                %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back1'}
-                  Cheers!Back
-                .modal-content
-                  %p.done-text-lg
-                    usernameさんに
-                    %span.font-en Cheers!Back
-                    を送りました。
-                  %p.done-text
-                    usernameさんにLINEでメッセージを送って飲みに行こう！
-                  .modal-link__container
-                    =link_to 'LINEで送る', '#', class: 'text-link primary'
           - for entry in @entries
             %li.user-content__list-item
               .user-content__inner
@@ -59,7 +37,7 @@
                     %br
                     この人と飲みに行く場合はCheers!Backを送ろう！
                 .user-content__button-container
-                  %button.button-default.font-en.js-modal-open{'data-target': 'cheers-back2', 'data-entry-id': entry.id, 'data-user-id': @user.id, 'data-post-id': entry.post_id}
+                  %button.button.font-en.js-modal-open{'data-target': 'cheers-back2', 'data-entry-id': entry.id, 'data-user-id': @user.id, 'data-post-id': entry.post_id}
                     Cheers!Back
                   .modal-content
                     %p.done-text-lg
